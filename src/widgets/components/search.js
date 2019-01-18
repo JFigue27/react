@@ -7,7 +7,15 @@ import "./search.css";
 
 const Serach = props => (
   <form action="" className="Search" onSubmit={props.handleSubmit}>
-    <input ref={props.setRef} type="text" className="Search-input" placeholder="Busca tu video favorito" />
+    <input
+      ref={props.setRef}
+      type="text"
+      className="Search-input"
+      name="Search"
+      onChange={props.handleChange}
+      value={props.value}
+      placeholder="Busca tu video favorito"
+    />
   </form>
 );
 
