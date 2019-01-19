@@ -17,11 +17,17 @@ class Video extends Component {
   setRef = element => {
     this.video = element;
   };
-
   render() {
+    const { handleLoadMetadata, handleTimeUpdate } = this.props;
     return (
       <div className="Video">
-        <video autoPlay={this.props.autoplay} src={this.props.src} ref={this.setRef} />
+        <video
+          autoPlay={this.props.autoplay}
+          src={this.props.src}
+          ref={this.setRef}
+          onLoadedMetadata={handleLoadMetadata}
+          onTimeUpdate={handleTimeUpdate}
+        />
       </div>
     );
   }
